@@ -1,16 +1,18 @@
-# React + Vite
+# API ON/OFF
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A powerful, cinematic interface to test and verify API keys across 40+ LLM providers.
 
-Currently, two official plugins are available:
+**🌍 Live Demo:** [https://api-on-off.vercel.app/](https://api-on-off.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- **40+ AI Providers:** Support for OpenAI, Anthropic, DeepSeek, Google Gemini, Groq, OpenRouter, and more.
+- **Smart Model Selection:** Auto-populated lists of the most popular models per provider with custom input support.
+- **Performance Graphing:** Built-in charts (using Recharts) to measure push and answer latencies for your keys.
+- **Local Storage:** Safely saves working keys locally so you can manage them over time.
+- **Bulk Testing:** A "Test All Saved" button to ping all your stored keys and verify they are still active.
+- **Cinematic UI:** Premium glassmorphism design with a full-viewport looping background video.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started Locally
+1. Clone the repository
+2. Run `npm install`
+3. Run `npm run dev` to start the development server.
