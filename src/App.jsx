@@ -123,7 +123,7 @@ export default function App() {
       {/* Navbar */}
       <nav className="relative z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 py-4 md:py-6">
         <div className="h-8 md:h-10 flex items-center text-xl md:text-2xl font-bold tracking-wider animate-blur-fade-up" style={{ animationDelay: '0ms' }}>
-          API ON OFF
+          API ON/OFF
         </div>
 
         <div className="hidden lg:flex items-center gap-8">
